@@ -1,0 +1,43 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      # If you're using Jekyll with Ruby:
+      # - gem install bundler
+      # - bundle install
+
+      # If you're using Node.js for a static site generator (e.g., Gatsby, Next.js, Eleventy):
+      # - npm install
+
+      # Or if you have no specific dependencies, you can omit this phase.
+      - echo "Installing dependencies (if any)..."
+
+  build:
+    commands:
+      - echo "Starting build..."
+      # For Jekyll:
+      # - bundle exec jekyll build
+
+      # For Hugo:
+      # - hugo
+
+      # For Gatsby/Next.js/React apps:
+      # - npm run build
+
+      # For a simple HTML/CSS/JS site, you might not need a build command if files are ready as-is
+      - echo "Building static assets..." # Replace with your actual build command
+
+  post_build:
+    commands:
+      - echo "Build completed successfully!"
+
+artifacts:
+  files:
+    # Adjust this path based on where your static site generator outputs files.
+    # Common paths: _site/**, public/**, build/**
+    - '**/*' # This means all files and folders. Be specific if you have non-artifact files.
+  base-directory: # Uncomment and adjust this if your artifacts are in a sub-directory
+  # - _site
+  # - public
+  # - build
